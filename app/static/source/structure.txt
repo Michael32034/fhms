@@ -1,0 +1,41 @@
+app
+├── __init__.py
+├── __pycache__
+│   ├── __init__.cpython-312.pyc
+│   ├── config.cpython-312.pyc
+│   ├── models.cpython-312.pyc
+│   └── routes.cpython-312.pyc
+├── app.py
+├── config.py
+├── models.py
+├── routes.py
+├── static
+│   ├── css
+│   │   ├── bootstrap.min.css
+│   │   ├── bootstrap.min.css.map
+│   │   ├── comment.css
+│   │   ├── form.css
+│   │   └── main.css
+│   ├── image
+│   │   ├── favicon.ico
+│   │   └── index.webp
+│   ├── js
+│   │   ├── Axios.js
+│   │   ├── Vue.js
+│   │   ├── account.js
+│   │   ├── bootstrap.bundle.min.js
+│   │   ├── bootstrap.bundle.min.js.map
+│   │   ├── community.js
+│   │   ├── login.js
+│   │   └── singup.js
+│   ├── media
+│   └── source
+└── templates
+    ├── account.html
+    ├── community.html
+    ├── index.html
+    ├── login.html
+    ├── singup.html
+    └── site_structure.html
+
+9 directories, 30 files

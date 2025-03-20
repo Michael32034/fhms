@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ua">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='/image/favicon.ico') }}"
+    >
+    <link
+      href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+      rel="stylesheet"
+      type="text/css"
+    >
+    <link
+      href="{{ url_for('static', filename='css/main.css') }}"
+      rel="stylesheet"
+      type="text/css"
+    >
+    <title>Hack me site</title>
+  </head>
+  <body>
+    <header>
+      <nav
+        class="navbar navbar-expand-sm navbar-dark bg-nigth"
+        aria-label="Third navbar example"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{{url_for('index')}}">
+            <img
+              src="{{ url_for('static', filename='/image/favicon.ico') }}"
+              width="30"
+              height="30"
+              alt=""
+            >
+            HMS
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarsExample03"
+            aria-controls="navbarsExample03"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarsExample03">
+            <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="{{url_for('index')}}"
+                  >Головна</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('community')}}"
+                  >Спільнота</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('site_structure')}}"
+                  >Струтура сайту</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="other"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Інше</a
+                >
+                <ul class="dropdown-menu bg-fiwe" aria-labelledby="other">
+                  <li>
+                    <a class="dropdown-item ff" href="{{url_for('utilites')}}"
+                      >Топ утиліт</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item ff" href="{{url_for('guides')}}"
+                      >Гайди для вивчення пентестингу</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item ff" href="{{url_for('account')}}"
+                      >Аккаунт</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item ff" href="{{url_for('help')}}"
+                      >Допомога</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container p-4">
+        <h1 class="text-center">Вітаємо на <b>Hack me site</b></h1>
+        <img
+          class="img-fluid"
+          src="{{ url_for('static', filename='/image/index.webp') }}"
+          alt=""
+        >
+        <p class="fs-4">
+          Цей сайт джерело досвіду для пентестерів-початківців. При умові якщо
+          ви <a href="{{url_for('account')}}">зарестровані</a>, вам дозволено
+          використовувати на цьому сайті всі відомі вам методи етичного (і
+          неетичного) хакінгу. Якщо ви тільки починаєте вивчення цієї сфери то
+          тут ви знайдете список рекомендованих утиліт для вивчення і
+          використання(в межах закону) + набір кваліфікованих гайдів з основ
+          пентестингу. При знаходженні дірки в безпеці сайту не соромтесь
+          розповісти про свої здобутци на сторінці спільноти.
+        </p>
+      </div>
+    </main>
+    <footer class="bg-nigth p-3 fs-3 fs-footer text-center">
+      Розробник Mikeinnet
+    </footer>
+    <script src="{{url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+  </body>
+</html>

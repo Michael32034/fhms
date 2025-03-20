@@ -1,0 +1,45 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main {
+    flex: 1;
+    padding: 0;
+    background-color: #540add;
+    color: #ffffff;
+}
+
+a {
+    color: #e84f63;
+}
+
+.bg-nigth{
+    background-color:#090C30;
+}
+
+.ff{
+    color: #ceb5fd;
+}
+
+.fs-footer {
+    color: #72a9f1;
+}
+
+.bg-lred{
+    background-color: #e84f63;
+}
+.bg-fiwe {
+    background-color: #440ab1;
+}
+
+.bg-fiwe-light{
+    background-color: #7b36fa;
+}
