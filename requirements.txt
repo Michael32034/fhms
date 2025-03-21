@@ -40,7 +40,6 @@ Pygments==2.19.1
 PyGObject==3.42.1
 PyJWT==2.3.0
 pyparsing==2.4.7
-python-apt==2.4.0+ubuntu4
 python-editor==1.0.3
 requests==2.32.3
 SecretStorage==3.3.1
