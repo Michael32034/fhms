@@ -1,0 +1,7 @@
+.flaskenv
+.venvhms/
+app/__pycache__/
+instance/
+migrations/
+tests/__pycache__/
+venvstart.txt
