@@ -13,7 +13,7 @@
         <header>
             <nav class="navbar navbar-expand-sm navbar-dark bg-nigth" aria-label="Third navbar example">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="{{url_for('main.index')}}">
+                    <a class="navbar-brand" href="{{url_for('index')}}">
                         <img src="{{ url_for('static', filename='/image/favicon.ico') }}" width="30" height="30" alt="">
                         HMS
                     </a>
@@ -24,28 +24,28 @@
                     <div class="collapse navbar-collapse" id="navbarsExample03">
                         <ul class="navbar-nav me-auto mb-2 mb-sm-0">
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="{{url_for('main.index')}}">Головна</a>
+                                <a class="nav-link" aria-current="page" href="{{url_for('index')}}">Головна</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="{{url_for('main.community')}}">Спільнота</a>
+                                <a class="nav-link active" href="{{url_for('community')}}">Спільнота</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{url_for('main.site_structure')}}">Струтура сайту</a>
+                                <a class="nav-link" href="{{url_for('site_structure')}}">Струтура сайту</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="other" data-bs-toggle="dropdown" aria-expanded="false">Інше</a>
                                 <ul class="dropdown-menu bg-fiwe" aria-labelledby="other">
                                     <li>
-                                        <a class="dropdown-item ff" href="{{url_for('main.utilites')}}">Топ утиліт</a>
+                                        <a class="dropdown-item ff" href="{{url_for('utilites')}}">Топ утиліт</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item ff" href="{{url_for('main.guides')}}">Гайди для вивчення пентестингу</a>
+                                        <a class="dropdown-item ff" href="{{url_for('guides')}}">Гайди для вивчення пентестингу</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item ff" href="{{url_for('main.account')}}">Аккаунт</a>
+                                        <a class="dropdown-item ff" href="{{url_for('account')}}">Аккаунт</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item ff" href="{{url_for('main.help')}}">Допомога</a>
+                                        <a class="dropdown-item ff" href="{{url_for('help')}}">Допомога</a>
                                     </li>
                                 </ul>
                             </li>

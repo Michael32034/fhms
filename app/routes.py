@@ -1,48 +1,49 @@
+
 from flask import render_template, jsonify
 from flask import request, session
-from flask import redirect, Blueprint
+from flask import redirect
 from datetime import datetime
 from werkzeug.security import generate_password_hash
 from werkzeug.security import check_password_hash
 from app.models import Account, Comment, Utilities, Guides
 from app import db
+from app import app
 
-main = Blueprint('main', __name__)
 
-@main.route('/')
+@app.route('/')
 def index():
     if "authorize" not in session:
         session["authorize"] = False
     return render_template("index.html")
 
-@main.route('/community')
+@app.route('/community')
 def community():
     if session["authorize"] != False:
         return render_template("community.html")
     else:
         return redirect("/singup")
 
-@main.route('/utilites')
+@app.route('/utilites')
 def utilites():
     return 'Utilites'
 
-@main.route('/utilites/<n>')
+@app.route('/utilites/<n>')
 def util_spec(n):
     return 'Utilite: %s' %str(n)
 
-@main.route('/site_structure')
+@app.route('/site_structure')
 def site_structure():
     return render_template("site_structure.html")
 
-@main.route('/guides')
+@app.route('/guides')
 def guides():
     return 'Guides'
 
-@main.route('/guides/<id>')
+@app.route('/guides/<id>')
 def guid_spec(id):
     return 'Guide: %s' %id
 
-@main.route('/account')
+@app.route('/account')
 def account():
     if "authorize" not in session:
         session["authorize"] = False
@@ -51,7 +52,7 @@ def account():
     else:
         return redirect("/singup")
 
-@main.route('/login', methods=["GET","POST"])
+@app.route('/login', methods=["GET","POST"])
 def login():
     if request.method == "POST":
         data = request.json
@@ -73,7 +74,7 @@ def login():
     else:
         return render_template("login.html")
 
-@main.route('/singup', methods=["GET","POST"])
+@app.route('/singup', methods=["GET","POST"])
 def singup():
     if request.method == "POST":
         data = request.json
@@ -101,13 +102,13 @@ def singup():
     else:
         return render_template('singup.html')
 
-@main.route('/logout')
+@app.route('/logout')
 def logout():
     session["nickname"] = None
     session["authorize"] = False
     return redirect("/")
 
-@main.route('/help', methods = ["GET", "POST"])
+@app.route('/help', methods = ["GET", "POST"])
 def help():
     if request.method == "POST":
         data = request.json
@@ -123,7 +124,7 @@ def help():
 
 #Api
 
-@main.route('/api/commentaries/<tag>')
+@app.route('/api/commentaries/<tag>')
 def api_comment(tag):
     commentw = Comment.query.filter(Comment.tag=="community").all()
     comment = []
@@ -136,7 +137,7 @@ def api_comment(tag):
         comment.append(a)
     return jsonify(comment)
 
-@main.route('/api/comentate/<tag>', methods=["POST"])
+@app.route('/api/comentate/<tag>', methods=["POST"])
 def api_commentate(tag):
     data = request.json
     author = Account.query.filter(Account.nickname == session["nickname"]).first()
@@ -145,19 +146,19 @@ def api_commentate(tag):
     db.session.commit()
     return "", 200
 
-@main.route('/api/utilities/home')
+@app.route('/api/utilities/home')
 def api_util_home():
     return jsonify("{'utilities': ['metasploit','nmap']}")
 
-@main.route('/api/utilities/specific/<top>')
+@app.route('/api/utilities/specific/<top>')
 def api_util_specific(top):
     return jsonify("{'top':'%s'}"%top)
 
-@main.route('/api/guides/home')
+@app.route('/api/guides/home')
 def api_guides_home():
     return jsonify("{'guides': null}")
 
-@main.route('/api/account', methods=["GET","POST"])
+@app.route('/api/account', methods=["GET","POST"])
 def api_account():
     if request.method == "POST":
         return jsonify({"nickname":session["nickname"]})

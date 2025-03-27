@@ -26,7 +26,7 @@
         aria-label="Third navbar example"
       >
         <div class="container-fluid">
-          <a class="navbar-brand" href="{{url_for('main.index')}}">
+          <a class="navbar-brand" href="{{url_for('index')}}">
             <img
               src="{{ url_for('static', filename='/image/favicon.ico') }}"
               width="30"
@@ -53,17 +53,17 @@
                 <a
                   class="nav-link"
                   aria-current="page"
-                  href="{{url_for('main.index')}}"
+                  href="{{url_for('index')}}"
                   >Головна</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{url_for('main.community')}}"
+                <a class="nav-link" href="{{url_for('community')}}"
                   >Спільнота</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="{{url_for('main.site_structure')}}"
+                <a class="nav-link active" href="{{url_for('site_structure')}}"
                   >Струтура сайту</a
                 >
               </li>
@@ -78,22 +78,22 @@
                 >
                 <ul class="dropdown-menu bg-fiwe" aria-labelledby="other">
                   <li>
-                    <a class="dropdown-item ff" href="{{url_for('main.utilites')}}"
+                    <a class="dropdown-item ff" href="{{url_for('utilites')}}"
                       >Топ утиліт</a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item ff" href="{{url_for('main.guides')}}"
+                    <a class="dropdown-item ff" href="{{url_for('guides')}}"
                       >Гайди для вивчення пентестингу</a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item ff" href="{{url_for('main.account')}}"
+                    <a class="dropdown-item ff" href="{{url_for('account')}}"
                       >Аккаунт</a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item ff" href="{{url_for('main.help')}}"
+                    <a class="dropdown-item ff" href="{{url_for('help')}}"
                       >Допомога</a
                     >
                   </li>
